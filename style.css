@@ -5,11 +5,17 @@
 }
 body{
     background-color: rgb(243, 243, 243);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    min-height: 100vh;
+    max-width: 1350px;
 }
 #header{
     display: flex;
     flex-direction: column;
     height: 320px;
+    width: 100%;
 }
 #div1{
     height: 13%;
@@ -29,6 +35,7 @@ body{
     justify-content: space-around;
     height: 100%;
     width: 60%;
+    padding-left: 1%;
 }
 .page{
     display: flex;
@@ -48,11 +55,13 @@ body{
     border-bottom: 3px solid #FFC54D;
     transition: 0.2s;
 }    
+#hamburguerButton{
+    display: none;
+}
 #div3{
     height: 63%;
     width: 100%;
     background-image: url(./hockey-arena-s.jpg);
-   
     font-size: 23px;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(255, 255, 255);
@@ -61,19 +70,17 @@ body{
     align-items: end;
     padding-left: 5%;
 }
-#logo{
-    position: absolute;
-    top: 0%;
+#logo{position: relative;
     left:5%;
     width: 160px;
     background-color: rgb(18, 18, 18);
 }
 main{
     display: flex;
-    flex-direction: column;
-    align-items: left; 
+    flex-direction: column; 
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 10%;
 }
 #section1{
     width: 100%;
@@ -93,12 +100,17 @@ h3{
     color: rgb(78, 78, 78);
 }
 h4{
+    display: flex;
+    flex-wrap: wrap;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .infoDate{ 
     padding: 2%;
     padding-left: 12%;
+}
+#subRules{
+    justify-content: center;
 }
 .about{
     padding: 2%;
@@ -122,16 +134,20 @@ thead{
     font-size: 20px;
     text-transform: uppercase;
 }
+#informationGame{
+    display: flex;
+    flex-direction: column;
+}
 .infGame{
-    width: 100%;
+    display: inline-block;
     line-height: 200%;
     font-weight:normal;
-   
 }
 #coordinator{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 li{
     list-style-position: inside;
@@ -149,21 +165,18 @@ li{
 #footer{
     width: 100%;
     height: 75px;
-    margin-top: 20%;
+    margin-top:auto;
     background-color: rgb(85, 162, 160);
 }
 #maps{display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-image: url(./FondoMaps-G.png);
-    
-    
+    background-image: url(./FondoMaps-G.png);   
 }
 .map{display: inline-block;
     margin: 0.2%;
     text-align: center;
     backdrop-filter: blur(10px);
-    filter:
 }
 .mapa{
     width: 100%;
@@ -190,4 +203,48 @@ legend{
 #send:hover{
 box-shadow: 0px 4px 8px 1px black;
 transition: 0.2s;
+}
+@media screen and (max-width:1199px){
+    #nav{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 959px){
+    #nav{
+        justify-content: end;
+    }
+    #hamburguerButton{
+        display:inline-block;
+        border: 1px solid red;
+        margin: 2%;
+    }
+    #menuHamburguesa{
+        display:block
+    }
+    .page{
+        display: none;
+}
+#logo{
+    left: 0%;
+}
+}
+@media screen and (max-width:  479px){
+    #nav{
+        justify-content: end;
+    }
+    #hamburguerButton{
+        display:inline-block;
+        border: 1px solid red;
+        margin: 2%;
+    }
+    .page{
+        display: none;
+    }
+    #logo{
+        left: 0%;
+    }
+   
+    main{
+        margin: 0%;
+    }
 }
